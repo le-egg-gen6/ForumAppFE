@@ -20,7 +20,7 @@ interface PostProps {
 const PostComponent: React.FC<PostProps> = ({ post }) => {
   const differenceMillisFromNow = getDifferrentMillisBetweenTimestamps(
     new Date().toISOString(),
-    post.timestamp
+    post.createdAt
   );
 
   return (

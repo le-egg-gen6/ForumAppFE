@@ -2,12 +2,13 @@ import { Reaction } from "./Reaction";
 
 export interface Comment {
   id: number;
-  text: string;
+  postId: number;
+  body: string;
   author: {
     id: number;
     username: string;
     avatarUrl: string;
   };
-  timestamp: string;
+  createdAt: string;
   reactions: Reaction[];
 }

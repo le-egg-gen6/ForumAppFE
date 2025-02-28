@@ -28,10 +28,10 @@ const CommentSection: React.FC<CommentSectionProps> = ({ comments }) => {
                 <p className="font-semibold text-sm">
                   {comment.author.username}
                 </p>
-                <p className="text-sm">{comment.text}</p>
+                <p className="text-sm">{comment.body}</p>
               </div>
               <div className="flex items-center space-x-2 text-xs text-gray-500">
-                <span>{new Date(comment.timestamp).toLocaleString()}</span>
+                <span>{new Date(comment.createdAt).toLocaleString()}</span>
                 <ReactionPopover
                   onReact={(type) =>
                     console.log(`Reacted to comment with ${type}`)

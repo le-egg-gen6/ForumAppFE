@@ -8,10 +8,11 @@ export interface Post {
     username: string;
     avatarUrl: string;
   };
+  title: string;
   content: string;
   containImage: boolean;
   imageUrl?: string;
-  timestamp: string;
+  createdAt: string;
   reactions: Reaction[];
   totalComments: number;
   topComments: Comment[];

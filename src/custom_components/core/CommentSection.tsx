@@ -1,8 +1,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Comment } from "@/shared/Comment";
 import type React from "react";
-import { ReactionPopover } from "./ReactionPopover";
-import TopReactionTooltip from "./TopReactionTooltip";
+import { ReactionPopover } from "@/custom_components/core/ReactionPopover";
+import TopReactionTooltip from "@/custom_components/core/TopReactionTooltip";
 
 interface CommentSectionProps {
   comments: Comment[];

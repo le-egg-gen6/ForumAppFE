@@ -11,7 +11,7 @@ import {
   getDifferrentMillisBetweenTimestamps,
 } from "@/utils/date_utils";
 import { Avatar } from "@radix-ui/react-avatar";
-import TopReactionTooltip from "./TopReactionTooltip";
+import TopReactionTooltip from "@/custom_components/core/TopReactionTooltip";
 
 interface PostProps {
   post: Post;

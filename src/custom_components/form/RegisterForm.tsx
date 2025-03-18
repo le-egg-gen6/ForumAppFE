@@ -62,6 +62,7 @@ const RegisterForm = () => {
     try {
       // const response = await axios.post("/api/login", data);
       // handle response
+      form.reset();
     } finally {
       setIsLoading(false);
     }

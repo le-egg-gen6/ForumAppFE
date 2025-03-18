@@ -17,6 +17,9 @@ const LoginPage = Loadable(
 const RegisterPage = Loadable(
   lazy(() => import("@/custom_components/page/RegisterPage"))
 );
+const ValidatePage = Loadable(
+  lazy(() => import("@/custom_components/page/ValidatePage"))
+)
 const HomePage = Loadable(
   lazy(() => import("@/custom_components/page/HomePage"))
 );
@@ -31,6 +34,7 @@ const Router = () => {
       <Route path="/homepage" index element={HomePage} />
       <Route path="/login" element={LoginPage} />
       <Route path="/register" element={RegisterPage} />
+      <Route path="/validate" element={ValidatePage} />
       <Route path="/not-found" element={NotFoundPage} />
       <Route path="*" element={<Navigate to={"/not-found"} replace />} />
     </Routes>

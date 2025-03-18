@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
 import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -50,51 +50,42 @@ const ValidateForm = () => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto p-6 space-y-6 bg-card rounded-lg shadow-md">
-      <div className="space-y-2 text-center">
-        <h2 className="text-2xl font-bold">Verification Code</h2>
-        <p className="text-muted-foreground">
-          Please enter the 6-digit code sent to your device
-        </p>
-      </div>
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <FormField
+          control={form.control}
+          name="code"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Verification Code</FormLabel>
+              <FormControl>
+                <Input
+                  placeholder="Enter 6-digit code"
+                  {...field}
+                  maxLength={6}
+                  className="text-center text-lg tracking-widest"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  autoComplete="one-time-code"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-          <FormField
-            control={form.control}
-            name="code"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Verification Code</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Enter 6-digit code"
-                    {...field}
-                    maxLength={6}
-                    className="text-center text-lg tracking-widest"
-                    inputMode="numeric"
-                    pattern="[0-9]*"
-                    autoComplete="one-time-code"
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <Button type="submit" className="w-full" disabled={isLoading}>
-            {isLoading ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Verifying...
-              </>
-            ) : (
-              "Verify Code"
-            )}
-          </Button>
-        </form>
-      </Form>
-    </div>
+        <Button type="submit" className="w-full" disabled={isLoading}>
+          {isLoading ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              Verifying...
+            </>
+          ) : (
+            "Verify Code"
+          )}
+        </Button>
+      </form>
+    </Form>
   );
 };
 

@@ -28,7 +28,7 @@ const AuthLayout = ({
   className,
 }: AuthLayoutProps) => {
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-b from-background to-muted/30">
+    <div className="min-h-screen w-screen flex items-center justify-center p-4 bg-gradient-to-b from-background to-muted/30">
       <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-5 pointer-events-none" />
 
       <div className="w-full max-w-md z-10">

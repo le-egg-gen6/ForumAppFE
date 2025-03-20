@@ -1,17 +1,16 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
-    Bookmark,
-    Calendar,
-    ChevronDown,
-    Clock,
-    Flag,
-    Gamepad,
-    Heart,
-    ShoppingBag,
-    Star,
-    Users,
+  Bookmark,
+  Calendar,
+  ChevronDown,
+  Clock,
+  Flag,
+  Gamepad,
+  Heart,
+  ShoppingBag,
+  Star,
+  Users,
 } from "lucide-react";
 
 // Sample data for shortcuts
@@ -75,22 +74,15 @@ const LeftSidebar = () => {
           {/* Navigation Shortcuts */}
           <div className="space-y-1">
             {shortcuts.map((shortcut) => (
-              <Button
-                key={shortcut.id}
-                variant="ghost"
-                className="w-full justify-start gap-3 px-2 text-gray-700"
-              >
+              <div className="flex items-center gap-3 rounded-md px-2 py-2 hover:bg-gray-100">
                 <shortcut.icon className="h-5 w-5 text-blue-500" />
-                <span>{shortcut.name}</span>
-              </Button>
+                <span className="text-sm font-medium">{shortcut.name}</span>
+              </div>
             ))}
-            <Button
-              variant="ghost"
-              className="w-full justify-start gap-3 px-2 text-gray-700"
-            >
+            <div className="flex items-center gap-3 rounded-md px-2 py-2 hover:bg-gray-100">
               <ChevronDown className="h-5 w-5 text-gray-500" />
-              <span>See more</span>
-            </Button>
+              <span className="text-sm font-medium">See more</span>
+            </div>
           </div>
 
           {/* Groups */}
@@ -99,20 +91,13 @@ const LeftSidebar = () => {
               <h3 className="text-base font-semibold text-gray-500">
                 Your groups
               </h3>
-              <Button
-                variant="link"
-                className="h-auto p-0 text-sm text-blue-500"
-              >
-                See all
-              </Button>
+              <div className="flex items-center gap-3 rounded-md px-2 py-2 hover:bg-gray-100">
+                <span className="text-sm font-medium">See all</span>
+              </div>
             </div>
             <div className="space-y-1">
               {groups.map((group) => (
-                <Button
-                  key={group.id}
-                  variant="ghost"
-                  className="w-full justify-start gap-3 px-2 text-gray-700"
-                >
+                <div className="flex items-center gap-3 rounded-md px-2 py-2 hover:bg-gray-100">
                   <Avatar className="h-8 w-8">
                     <AvatarImage src={group.avatar} alt={group.name} />
                     <AvatarFallback>
@@ -122,8 +107,8 @@ const LeftSidebar = () => {
                         .join("")}
                     </AvatarFallback>
                   </Avatar>
-                  <span className="text-sm">{group.name}</span>
-                </Button>
+                  <span className="text-sm font-medium">{group.name}</span>
+                </div>
               ))}
             </div>
           </div>
@@ -171,6 +156,6 @@ const LeftSidebar = () => {
       </ScrollArea>
     </div>
   );
-}
+};
 
 export default LeftSidebar;

@@ -26,10 +26,10 @@ const TopBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="w-full border-b bg-white shadow-sm">
-      <div className="mx-auto flex h-14 max-w-screen-2xl items-center justify-between px-4 relative">
+    <div className="w-screen border-b bg-white shadow-sm">
+      <div className="mx-auto flex h-14 max-w-screen items-center justify-between px-4 relative">
         {/* Left section - Logo and Search */}
-        <div className="flex items-center w-64">
+        <div className="flex items-center w-[320px]">
           <div className="mr-2 flex items-center md:mr-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -61,6 +61,9 @@ const TopBar = () => {
         {/* Center section - Navigation (Desktop) */}
         <div className="absolute left-1/2 top-0 hidden -translate-x-1/2 transform md:flex">
           <nav className="flex space-x-1">
+            <div className="flex items-center gap-3 rounded-md px-2 py-2 hover:bg-gray-100">
+              <Home className="h-6 w-6" />
+            </div>
             <Button
               variant="ghost"
               className="h-14 rounded-none border-b-2 border-blue-500 px-10 text-blue-500"
@@ -83,7 +86,7 @@ const TopBar = () => {
         </div>
 
         {/* Right section - Icons and Profile */}
-        <div className="flex items-center space-x-2 w-64 justify-end">
+        <div className="flex items-center space-x-2 w-64 justify-end md:mr-4">
           <Button
             variant="ghost"
             size="icon"

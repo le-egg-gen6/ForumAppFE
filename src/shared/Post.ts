@@ -1,19 +1,21 @@
-import { Comment } from "./Comment";
+import { CommentInfo } from "./Comment";
 import { Reaction } from "./Reaction";
+import { SimpleUserInfo } from "./User";
 
-export interface Post {
+export interface PostInfo {
   id: number;
-  author: {
-    id: number;
-    username: string;
-    avatarUrl: string;
-  };
-  title: string;
   content: string;
-  containImage: boolean;
-  imageUrl?: string;
-  createdAt: string;
+  author: SimpleUserInfo;
+  images: string[];
+  createdAt: Date;
   reactions: Reaction[];
-  totalComments: number;
-  topComments: Comment[];
+  topComments: CommentInfo[];
+}
+
+export interface SimplePostInfo {
+  id: number;
+  content: string;
+  author: SimpleUserInfo;
+  images: string[];
+  createdAt: Date;
 }
